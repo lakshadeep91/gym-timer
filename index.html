@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<style>
+			div.container {
+				align-content: center;
+				height: 100%;
+				width: 100%;
+			}
+			button.time-option {
+				height:80px;
+				width: 80px;
+			}
+			div.banner h1 {
+				font-size: 1000%;
+			}
+			div#reset button {
+				height:80px;
+				width: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container" style="text-align: center;">
+			<div id="reset">	
+				<button onclick="reset()"><h1>Reset</h1></button>
+			</div>
+			<div class="banner">
+				<h1>0</h1>
+			</div>
+			<button class="time-option" onclick="start(60, 1)">
+				<h1>60</h1>
+			</button>
+			<button  class="time-option" onclick="start(90, 2)">
+				<h1>90</h1>
+			</button>
+			<button  class="time-option" onclick="start(120, 3)">
+				<h1>120</h1>
+			</button>
+		</div>
+		<script>
+			var flag = 0;
+			var interval = null;
+			function start_timer(seconds) {
+				interval = setInterval(function() {
+			   		document.querySelector(".banner h1").textContent = seconds
+			   		seconds -= 1;
+			   		if (seconds < 0) {
+			   			reset();
+			   		}
+			 	}, 1000);
+			}
+			function start(seconds, index) {
+				if(flag == 0) {
+					flag = index;
+					start_timer(seconds);
+				}
+			}
+			function reset() {
+	   			const audio = new Audio('notification.wav');
+	   			audio.play();
+	   			document.querySelector(".banner h1").textContent = 0
+			   	clearInterval(interval);
+			   	flag = false;
+			}
+		</script>
+	</body>
+</html>

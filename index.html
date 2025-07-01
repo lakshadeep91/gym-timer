@@ -7,15 +7,15 @@
 				width: 100%;
 			}
 			button.time-option {
-				height:80px;
-				width: 80px;
+				height:150px;
+				width: 30%;
 			}
 			div.banner h1 {
 				font-size: 1000%;
 			}
 			div#reset button {
-				height:80px;
-				width: auto;
+				height:150px;
+				width: 200px;
 			}
 		</style>
 	</head>
@@ -27,15 +27,17 @@
 			<div class="banner">
 				<h1>0</h1>
 			</div>
-			<button class="time-option" onclick="start(60, 1)">
-				<h1>60</h1>
-			</button>
-			<button  class="time-option" onclick="start(90, 2)">
-				<h1>90</h1>
-			</button>
-			<button  class="time-option" onclick="start(120, 3)">
-				<h1>120</h1>
-			</button>
+			<div class="timer-options-container">
+				<button class="time-option" onclick="start(60, 1)">
+					<h1>60</h1>
+				</button>
+				<button  class="time-option" onclick="start(90, 2)">
+					<h1>90</h1>
+				</button>
+				<button  class="time-option" onclick="start(120, 3)">
+					<h1>120</h1>
+				</button>
+			</div>
 		</div>
 		<script>
 			var flag = 0;

@@ -64,6 +64,11 @@
 					flag = index;
 					start_timer(seconds);
 				}
+				else {
+					reset();
+					flag = index;
+					start_timer(seconds);
+				}
 			}
 			function reset() {
 	   			const audio = new Audio('notification.wav');
